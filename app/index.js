@@ -1,10 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import RedirectButton from '../components/buttons/RedirectButton';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <RedirectButton text="Create New Image" link="/NewImage" width={200} height={75} />
+      <RedirectButton text="View Saved Images" link="/SavedImages" width={200} height={75} />
       <StatusBar style="auto" />
     </View>
   );
@@ -13,7 +15,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
   },
