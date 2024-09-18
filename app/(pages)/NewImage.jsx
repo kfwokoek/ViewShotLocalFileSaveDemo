@@ -1,4 +1,4 @@
-import { StyleSheet, Image, SafeAreaView } from 'react-native'
+import { StyleSheet, Image, SafeAreaView, View } from 'react-native'
 import React, {useState} from 'react'
 import colors from '../../constants/colors'
 import LeftArrowButton from '../../components/buttons/LeftArrowButton'
@@ -8,9 +8,11 @@ const NewImage = () => {
     const [colorIndex, setColorIndex] = useState(0);
     return (
         <SafeAreaView style={styles.container}>
-            <LeftArrowButton numItems={colors.length} state={colorIndex} setState={setColorIndex} width={200} height={200}/>
-            <RightArrowButton numItems={colors.length} state={colorIndex} setState={setColorIndex} width={200} height={200}/>
-            <Image source={require('../../assets/shapes/circle.png')} style={{ width: 200, height: 200, resizeMode: 'contain' }}/>
+            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                <LeftArrowButton numItems={colors.length} state={colorIndex} setState={setColorIndex} width={150} height={150}/>
+                <Image source={require('../../assets/shapes/circle.png')} style={{ width: 150, height: 150, resizeMode: 'contain' }} tintColor={colors[colorIndex].hex}/>
+                <RightArrowButton numItems={colors.length} state={colorIndex} setState={setColorIndex} width={150} height={150}/>
+            </View>
         </SafeAreaView>
     )
 }

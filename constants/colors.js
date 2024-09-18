@@ -24,10 +24,6 @@ export default colors = [
         hex: "#FF00FF"
     },
     {
-        name: "black",
-        hex: "#000000"
-    },
-    {
         name: "white",
         hex: "#FFFFFF"
     }
